@@ -1,0 +1,66 @@
+/* custom */
+#footer { background: lightgray; }
+
+form .form-step-help p {
+    margin-left: 0;
+    color: #666;
+}
+
+form .form-step {
+    margin-bottom: 50px;
+}
+
+form .form-step-help table {
+    border: #ccc 2px solid;
+    width: 100%;
+}
+
+form .form-step-help th, form .form-step-help td {
+    border: #ccc 2px solid;
+    text-transform: none;
+}
+
+.form-row.detail p {
+    overflow: auto;
+}
+
+.submit-row input.deletebtn {
+    float: left;
+    background: rgb(186, 33, 33);
+}
+
+.submit-row input.deletebtn:hover {
+    background: #a41515;
+}
+
+.submit-row a.btnlink {
+    display: block;
+    background: #79aec8;
+    border-radius: 4px;
+    padding: 10px 15px;
+    height: 35px;
+    line-height: 15px;
+    color: #fff;
+    float: right;
+    text-transform: uppercase;
+}
+
+.submit-row a.btnlink:hover {
+    background: #609ab6;
+}
+
+#header {
+    box-sizing: unset;
+}
+
+.messages ul {
+    padding: 0;
+}
+
+.sent p {
+    overflow: hidden;
+}
+
+.replies p {
+    overflow: hidden;
+}

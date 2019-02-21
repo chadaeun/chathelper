@@ -1,0 +1,191 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block title %}
+    {% trans 'ChatHelper - Service' %}
+{% endblock %}
+
+{% block extrahead %}{{ block.super }}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'chat.js' %}"></script>
+{% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-grid.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-reboot.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
+    <!-- added because bootstrap overwrites base.css -->
+    <link rel="stylesheet" type="text/css" href="{% static "chat.css" %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'service-index' %}">{% trans 'ChatHelper - Service' %}</a></h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+{#    <div class="breadcrumbs">#}
+{#    {% if title %} {{ title }}{% endif %}#}
+{#    </div>#}
+{% endblock %}
+
+{% block userlinks %}
+{#    {% if site_url %}#}
+{#        <a href="{{ site_url }}">{% trans 'View Chatbot' %}</a> /#}
+{#    {% endif %}#}
+{#    {% if user.has_usable_password %}#}
+{#    <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /#}
+{#    {% endif %}#}
+{#    <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>#}
+{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-chatbot-service{% endblock %}
+
+{% block content %}
+    <div class="content-main">
+        <!--
+
+A concept for a chat interface.
+
+Try writing a new message! :)
+
+
+Follow me here:
+Twitter: https://twitter.com/thatguyemil
+Codepen: https://codepen.io/emilcarlsson/
+Website: http://emilcarlsson.se/
+
+-->
+
+<div id="frame">
+	<div class="content">
+		<div class="messages">
+			<ul>
+				<li class="replies">
+					<p>{% trans 'Waiting for Chatbot service...' %}</p>
+				</li>
+			</ul>
+		</div>
+		<div class="message-input">
+			<div class="wrap">
+			<input type="text" placeholder="Write your message..." />
+			<button class="submit">{% trans 'Send' %}</button>
+			</div>
+		</div>
+	</div>
+</div>
+    </div>
+
+    <script>
+
+
+
+        $(".messages").animate({ scrollTop: $(document).height() }, "fast");
+
+        $.ajax({
+
+	  type: 'POST',
+
+	  url: document.location.protocol + "//" + document.location.hostname + ":32284/check",
+
+	  success: function(data){
+
+	      $('<li class="replies"><p>' + data.response_msg + '</p></li>').appendTo($('.messages ul'));
+
+		// do something with the received data
+
+	  },
+
+	  error: function(data){
+
+	      $('<li class="replies"><p>' + '{% trans "Chatbot service is not ready" %}' + '</p></li>').appendTo($('.messages ul'));
+      }
+
+	});
+
+function newMessage() {
+
+	message = $(".message-input input").val();
+
+
+
+	if($.trim(message) == '') {
+
+		return false;
+
+	}
+
+
+	$('<li class="sent"><p>' + message + '</p></li>').appendTo($('.messages ul'));
+
+	$('.message-input input').val(null);
+
+	$(".messages").animate({ scrollTop: $('.messages').prop('scrollHeight') }, "fast");
+
+	$.ajax({
+
+	  type: 'POST',
+
+	  url: document.location.protocol + "//" + document.location.hostname + ":32284/sent",
+
+	  data: JSON.stringify(message),
+
+	  success: function(data){
+	      // qa_id, answer, date
+          for (var i = 0; i < data.length; i++) {
+              var answer = data[i];
+              var answer_text = answer.answer.replace('\n', '<br>');
+              $('<li class="replies"><p>' + answer_text + '(' + answer.date + ') ' + '<a href="' + answer.qa_id + '" target="_blank">{% trans "view more" %}&rsaquo;&rsaquo;</a>' + '</p></li>').appendTo($('.messages ul'));
+          }
+
+		// do something with the received data
+          $(".messages").animate({ scrollTop: $('.messages').prop('scrollHeight') }, "fast");
+
+	  },
+
+        error: function(data){
+	      $('<li class="replies"><p>' + '{% trans "No response from chatbot" %}' + '</p></li>').appendTo($('.messages ul'));
+        }
+
+	});
+
+};
+
+
+
+$('.submit').click(function() {
+
+  newMessage();
+
+});
+
+
+
+$(window).on('keydown', function(e) {
+
+  if (e.which == 13) {
+
+    newMessage();
+
+    return false;
+
+  }
+
+});
+
+//# sourceURL=pen.js
+
+</script>
+{% endblock %}
+
+{% block footer %}
+{#    <div id="footer">#}
+{#        <p>#}
+{#            ChatHelper - Chatbot Construction and Administration Tool <br>#}
+{#            <a href="{{ github_url }}">GitHub</a> / <a href="mailto:{{ email }}">{{ email }}</a>#}
+{#        </p>#}
+{#    </div>#}
+{% endblock %}

@@ -1,0 +1,264 @@
+{% extends 'base_site.html' %}
+{% load i18n static %}
+
+{% block extrahead %}{{ block.super }}
+<script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+{{ form.media }}
+{% endblock %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
+{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-chatbot-manage model-dataset change-form{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+        <a href="{% url 'manage-dataset' %}">{% trans 'Chatbot Management' %}</a>
+        &rsaquo; {{ title }} {% if form.instance %} &rsaquo; {{ form.instance.name }} {% endif %}
+    </div>
+{% endblock %}
+
+{% block content %}
+    {% if not_editable %}
+        <div id="content-main">
+        <div class="module">
+            <h2>{% trans "Edit prohibitted" %}</h2>
+            <p>{% trans "You can't edit your dataset while/after training." %} <br>
+                {% trans "Please create new dataset and train it." %}
+            </p>
+        </div>
+        </div>
+
+    {% else %}
+    <div id="content-main">
+        <form id="dataset-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+            <fieldset class="module aligned wide">
+                <!-- Basic Settings -->
+                <div class="form-step row">
+                    <div class="col-8">
+                        <h2>{% trans 'Basic Settings' %}</h2>
+
+                        <!-- name -->
+                        <div class="form-row field-name">
+                            <div>
+                                {{ form.name.label_tag }}
+                                {{ form.name }}
+                                <div class="help">{{ form.name.help_text|linebreaksbr }}</div>
+                                {{ form.name.errors }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-step-help col-4"></div>
+                </div>
+
+                <!-- Original File -->
+                <div class="form-step">
+                    <div class="row">
+                        <div class="col-8">
+                            <h2>{% trans 'Upload File' %}</h2>
+
+                            <!-- original file -->
+                            <div class="form-row field-original-file">
+                                <div>
+                                    {{ form.original_file.label_tag }}
+                                    {{ form.original_file}}
+                                    <div class="help">{{ form.original_file.help_text|linebreaksbr }}</div>
+                                    {{ form.original_file.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step-help col-4">
+                            <h3>{% trans 'Help' %} - {% trans 'Upload File' %}</h3>
+                            <p>
+                                {% trans 'You should select correctly formatted .xlsx file which contains your question - answer data(eg. QA board data).' %}<br>
+                                {% trans 'Your file should match the format specified bellow.' %}
+                            </p>
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Date</th>
+                                    <th>Question</th>
+                                    <th>Answer</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>0</td>
+                                    <td>2019.02.07</td>
+                                    <td>Q1</td>
+                                    <td>A1</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2019.02.08</td>
+                                    <td>Q2</td>
+                                    <td>A2</td>
+                                </tr>
+                                <tr>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                    <td>...</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Split -->
+                <div class="form-step">
+                    <div class="row">
+                        <div class="col-8">
+                            <h2>{% trans 'Dataset Split Settings' %}</h2>
+
+                            <!-- question split -->
+                            <div class="form-row field-question-split">
+                                <div>
+                                    {{ form.q_split.label_tag }}
+                                    {{ form.q_split }}
+                                    <div class="help">{{ form.q_split.help_text|linebreaksbr }}</div>
+                                    {{ form.q_split.errors }}
+                                </div>
+                            </div>
+
+                            <!-- answer split -->
+                            <div class="form-row field-answer-split">
+                                <div>
+                                    {{ form.a_split.label_tag }}
+                                    {{ form.a_split }}
+                                    <div class="help">{{ form.a_split.help_text|linebreaksbr }}</div>
+                                    {{ form.a_split.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step-help col-4">
+                            <h3>{% trans 'Help' %} - {% trans 'Dataset Split Settings' %}</h3>
+                            <p>
+                                {% trans "Your data might be messive, but don't worry. We will automatically split texts in your data to fit to chatbot system." %}<br>
+                                {% trans "All you need to do is just selecting how to split text. Here's some examples." %}
+                            </p>
+                            <h4>{% trans 'Original Text' %}</h4>
+<pre>Lorem ipsum dolor sit amet. Consectetur adipiscing elit.
+Morbi eu orci sollicitudin.
+
+Luctus lorem vel, condimentum elit.</pre>
+                            <h4>{% trans 'Split by Sentence' %}</h4>
+                            <table>
+                                <tbody>
+                                <tr><td>Lorem ipsum dolor sit amet.</td></tr>
+                                <tr><td>Consectetur adipiscing elit.</td></tr>
+                                <tr><td>Morbi eu orci sollicitudin.</td></tr>
+                                <tr><td>Luctus lorem vel, condimentum elit.</td></tr>
+                                </tbody>
+                            </table>
+                            <h4>{% trans 'Split by Line Break' %}</h4>
+                            <table>
+                                <tbody>
+                                <tr><td>Lorem ipsum dolor sit amet. Consectetur adipiscing elit.</td></tr>
+                                <tr><td>Morbi eu orci sollicitudin.</td></tr>
+                                <tr><td>Luctus lorem vel, condimentum elit.</td></tr>
+                                </tbody>
+                            </table>
+                            <h4>{% trans 'Split by Paragraph' %}</h4>
+                            <table>
+                                <tbody>
+                                <tr><td>Lorem ipsum dolor sit amet. Consectetur adipiscing elit. Morbi eu orci sollicitudin.</td></tr>
+                                <tr><td>Luctus lorem vel, condimentum elit.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- cleansing -->
+                <div class="form-step">
+                    <div class="row">
+                        <div class="col-8">
+                            <h2>{% trans 'Dataset Cleansing Settings' %}</h2>
+
+                            <!-- removed_incomplete_sylls -->
+                            <div class="form-row field-removed-incomplete-sylls">
+                                <div>
+                                    {{ form.removed_incomplete_sylls.label_tag }}
+                                    {{ form.removed_incomplete_sylls }}
+                                    <div class="help">{{ form.removed_incomplete_sylls.help_text|linebreaksbr }}</div>
+                                    {{ form.removed_incomplete_sylls.errors }}
+                                </div>
+                            </div>
+
+                            <!-- removed_nicknames -->
+                            <div class="form-row field-removed-nicknames">
+                                <div>
+                                    {{ form.removed_nicknames.label_tag }}
+                                    {{ form.removed_nicknames }}
+                                    <div class="help">{{ form.removed_nicknames.help_text|linebreaksbr }}</div>
+                                    {{ form.removed_nicknames.errors }}
+                                </div>
+                            </div>
+
+                            <!-- removed_nicknames_keywords -->
+                            <div class="form-row field-removed_nicknames_keywords">
+                                <div>
+                                    {{ form.removed_nicknames_keywords.label_tag }}
+                                    {{ form.removed_nicknames_keywords }}
+                                    <div class="help">{{ form.removed_nicknames_keywords.help_text|linebreaksbr }}</div>
+                                    {{ form.removed_nicknames_keywords.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step-help col-4">
+                            <h3>{% trans 'Help' %} - {% trans 'Dataset Cleansing Settings' %}</h3>
+                            <p>
+                                {% trans 'Data cleansing functions are only available with Korean data.' %}
+                                {% trans 'If you turn "Removed nicknames" option one, we will automatically cleanse nicknames from your data for preventing them exposed in chatbot service.' %}<br>
+                                {% trans '"Keywords for removing nicknames" means suffixes cooccurs with nickname. You should fill this field to remove nicknames automaticallly.' %}
+                                {% trans 'Below is an example!' %}
+                            </p>
+                            <h4>{% trans 'Original Text' %}</h4>
+                            <pre>홍길동님께서 문의하신 내용을 확인한 결과, 홍길동 님의 정보는 정상적으로 처리되었습니다.</pre>
+                            <h4>{% trans "After removing nicknames with keywords ['님']" %}</h4>
+                            <pre>문의하신 내용을 확인한 결과, 정보는 정상적으로 처리되었습니다.</pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POS selection -->
+                <div class="form-step">
+                    <div class="row">
+                        <div class="col-8">
+                            <h2>{% trans 'Select POS' %}</h2>
+
+                            <!-- selected_poses -->
+                            <div class="form-row field-selected-poses">
+                                <div>
+                                    {{ form.selected_poses.label_tag }}
+                                    {{ form.selected_poses }}
+                                    <div class="help">{{ form.selected_poses.help_text|linebreaksbr }}</div>
+                                    {{ form.selected_poses.errors }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-step-help col-4">
+                            <h3>{% trans 'Help' %} - {%  trans 'Select POS (Part of Speech)' %}</h3>
+                            <p>
+                                {% trans 'Part of speech (POS) is a category of words which have similar grammatical properties.' %}
+                                {% trans 'We extract tokens and their POS from sentence in order to calculate similarity between sentences.' %}
+                                {% trans 'You can select POS; recommended setting is selecting only nouns, as they represent keywords in sentences.' %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <input type="submit" value="{% trans 'Save' %}" class="default" name="_save">
+        </form>
+    </div>
+    {% endif %}
+{% endblock %}

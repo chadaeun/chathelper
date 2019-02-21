@@ -1,0 +1,108 @@
+{% extends 'base_site.html' %}
+{% load i18n static constants %}
+
+<!-- Based on admin/change_list.html -->
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/changelists.css" %}">
+    <script type="text/javascript" src="{% url 'admin:jsi18n' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/jquery.init.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/core.js' %}"></script>
+    <script type="text/javascript" src="{% static 'admin/js/admin/RelatedObjectLookups.js' %}"></script>
+    <script type="text/javascript" src="{% static "admin/js/actions.js" %}"></script>
+    <script type="text/javascript" src="{% static "admin/js/urlify.js" %}"></script>
+    <script type="text/javascript" src="{% static "admin/js/prepopulate.js" %}"></script>
+    <script type="text/javascript" src="{% static "admin/js/vendor/xregexp/xregexp.js" %}"></script>
+{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-chatbot-manage model-dataset change-list{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block content %}
+    <div id="content-main">
+
+    <!-- create dataset link -->
+    {% block object-tools %}
+        <div>
+            <a href="{% url 'manage-dataset-create' %}" class="addlink">{% trans 'Create Chatbot' %}</a>
+        </div>
+    {% endblock %}
+
+    <div class="module filtered" id="changelist">
+        <!-- search form. Based on admin/search_form.html -->
+        {% block search %}
+            <div id="toolbar"><form id="changelist-search" method="get">
+                <div>
+                    <label for="searchbar"><img src="{% static "admin/img/search.svg" %}" alt="Search"></label>
+                    <input type="text" size="40" name="{{ search_var }}" value="{{ query }}" id="searchbar" autofocus>
+                    <input type="submit" value="{% trans 'Search' %}">
+                    {% if show_result_count %}
+                        <span class="small quiet">{% blocktrans count counter=result_count %}{{ counter }} result{% plural %}{{ counter }} results{% endblocktrans %} (<a href="?">{% blocktrans with full_result_count=full_result_count %}{{ full_result_count }} total{% endblocktrans %}</a>)</span>
+                    {% endif %}
+                </div>
+            </form></div>
+        {% endblock %}
+
+        <!-- changelist-form -->
+        <form id="changelist-form" method="post" novalidate>{% csrf_token %}
+            {% block result_list %}
+                <!-- actions. Based on admin/actions.html -->
+                <div class="actions">
+                    {% block actions %}
+                        {% block actions-submit %}
+                            <span>{% trans 'Action to selected chatbots:' %}</span>
+                            <button type="submit" class="button" title="{% trans 'Delete selected chatbots' %}" name="action" value="0">{% trans "Delete" %}</button>
+                        {% endblock %}
+
+                        {% block actions-counter %}
+                            <span class="action-counter" data-actions-icnt="{{ results|length }}">{{ selection_note }}</span>
+                        {% endblock %}
+                    {% endblock %}
+                </div>
+
+                <!-- result_list. Based on admin/change_list_results.html -->
+                {% if results %}
+                    <div class="results">
+                    <table id="result_list">
+                        <thead>
+                        <th scope="col" class="action-checkbox-column">
+                            <div class="text"><span><input type="checkbox" id="action-toggle"></span></div>
+                        </th>
+                        {% for header in result_headers %}
+                            <th scope="col">
+                            <div class="text"><span>{{ header|capfirst }}</span></div>
+                            </th>
+                        {% endfor %}
+                        </thead>
+                    <tbody>
+                    {% for result in results %}
+                        <tr class="{% cycle 'row1' 'row2' %}">
+                            <td class="action-checkbox">
+                                <input type="checkbox" name="_selected_action" value="{{ result.id }}" class="action-select">
+                            </td>
+                            <th><a href="{% url 'manage-dataset-detail' result.id %}">{{ result.name }}</a></th>
+                            <td>{{ result.date }}</td>
+                            <td>{{ result.status | to_status_str }}</td>
+                            <td>{% if result.status == 1 or result.status == 2 %}{{ result.status_training | to_status_training_str }}{% endif %}</td>
+                            <td><p id="id_removed_incomplete_sylls"><img src="{% if result.status_service %}{% static 'admin/img/icon-yes.svg' %}{% else %}{% static 'admin/img/icon-no.svg' %}{% endif %}" alt="{{ dataset.status_service }}"></p></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                    </table>
+                    </div>
+                {% else %} <!-- allow user to know that there is no result. -->
+                    <p>
+                        {% trans 'There is no chatbot searched.' %}<br>
+                        {% trans 'You can make one at "Create Chatbot".' %}<br>
+                        <a href="{% url 'manage-dataset-create' %}">{% trans 'Create Chatbot' %}</a>
+                    </p>
+                {% endif %}
+            {% endblock %}
+        </form>
+    </div>
+
+    </div>
+{% endblock %}

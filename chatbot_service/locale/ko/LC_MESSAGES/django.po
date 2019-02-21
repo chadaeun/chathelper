@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-19 16:25+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: templates/service_detail.html:17 templates/service_index.html:23
+msgid "ChatHelper - Service"
+msgstr "ChatHelper - 챗봇 서비스"
+
+#: templates/service_detail.html:32
+msgid "Q&A Original Data"
+msgstr "질의응답 원본 데이터"
+
+#: templates/service_index.html:67
+msgid "Waiting for Chatbot service..."
+msgstr "챗봇 서비스를 기다리고 있습니다..."
+
+#: templates/service_index.html:74
+msgid "Send"
+msgstr "전송"
+
+#: templates/service_index.html:105
+msgid "Chatbot service is not ready"
+msgstr "챗봇 서비스가 준비되지 않았습니다."
+
+#: templates/service_index.html:143
+msgid "view more"
+msgstr "더보기"
+
+#: templates/service_index.html:151
+msgid "No response from chatbot"
+msgstr "챗봇 서비스가 응답하지 않습니다."

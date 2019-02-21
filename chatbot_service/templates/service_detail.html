@@ -1,0 +1,50 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block title %}
+    {% trans 'ChatHelper - Service' %}
+{% endblock %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-grid.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-reboot.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'service-index' %}">{% trans 'ChatHelper - Service' %}</a></h1>
+{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block userlinks %}{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-chatbot-service{% endblock %}
+
+{% block content %}
+    <div class="content-main">
+    <div class="aligned module">
+        <div>
+        <h2>{% trans 'Q&A Original Data' %}</h2>
+            <div class="form-row detail">
+                {{ form.date.label_tag }}
+                <p id="id_date">{{ qa.date }}</p>
+            </div>
+            <div class="form-row detail">
+                {{ form.original_question.label_tag }}
+                <p id="id_original_question">{{ qa.original_question }}</p>
+            </div>
+            <div class="form-row detail">
+                {{ form.original_answer.label_tag }}
+                <p id="id_original_answer">{{ qa.original_answer }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}{% endblock %}

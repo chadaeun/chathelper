@@ -1,0 +1,42 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-grid.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap-reboot.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
+    <!-- added because bootstrap overwrites base.css -->
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'manage-dataset' %}">{{ site_header|default:_('Django administration') }}</a></h1>
+{% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+    {% if title %} {{ title }}{% endif %}
+    </div>
+{% endblock %}
+
+{% block userlinks %}
+    {% if site_url %}
+        <a href="{{ site_url }}">{% trans 'View Chatbot' %}</a> /
+    {% endif %}
+    {% if user.has_usable_password %}
+    <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a> /
+    {% endif %}
+    <a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a>
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block footer %}
+    <div id="footer">
+        <p>
+            ChatHelper - Chatbot Construction and Administration Tool <br>
+            <a href="{{ github_url }}">GitHub</a> / <a href="mailto:{{ email }}">{{ email }}</a>
+        </p>
+    </div>
+{% endblock %}

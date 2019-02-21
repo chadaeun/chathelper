@@ -1,0 +1,115 @@
+{% extends 'base_site.html' %}
+{% load i18n static constants %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <link rel="stylesheet" type="text/css" href="{% static "admin/css/forms.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
+{% endblock %}
+
+{% block coltype %}flex{% endblock %}
+
+{% block bodyclass %}{{ block.super }} app-chatbot-manage model-dataset detail {% endblock %}
+
+{% block breadcrumbs %}
+    <div class="breadcrumbs">
+    <a href="{% url 'manage-dataset' %}">{% trans 'Chatbot Management' %}</a>
+        &rsaquo; {{ title }} &rsaquo; {{ dataset.name }}
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div id="content-main">
+    <div class="aligned module">
+        <div>
+        <h2>{% trans 'Basic Settings' %}</h2>
+            <div class="form-row detail">
+                {{ form.name.label_tag }}
+                <p id="id_name">{{ dataset.name }}</p>
+            </div>
+            <div class="form-row detail">
+                {{ form.date.label_tag }}
+                <p id="id_date">{{ dataset.date }}</p>
+            </div>
+            <div class="form-row detail">
+                {{ form.status.label_tag }}
+                <p id="id_status">{{ dataset.status | to_status_str }}</p>
+            </div>
+            {% if dataset.status == 1 or dataset.status == 2 %}
+            <div class="form-row detail">
+                {{ form.status_training.label_tag }}
+                <p id="id_status_training">{{ dataset.status_training | to_status_training_str }}</p>
+            </div>
+            {% endif %}
+            <div class="form-row detail">
+                {{ form.status_service.label_tag }}
+                <p id="id_status_service"><img src="{% if dataset.status_service %}{% static 'admin/img/icon-yes.svg' %}{% else %}{% static 'admin/img/icon-no.svg' %}{% endif %}" alt="{{ dataset.status_service }}"></p>
+            </div>
+            <div class="form-row detail">
+                {{ form.result_dir.label_tag }}
+                <p id="id_result_dir">{{ dataset.result_dir }}</p>
+            </div>
+        </div>
+
+        <div>
+            <h2>{% trans 'Dataset Split Settings' %}</h2>
+            <div class="form-row detail">
+                {{ form.q_split.label_tag }}
+                <p id="id_q_split">{{ dataset.q_split | to_split_str }}</p>
+            </div>
+            <div class="form-row detail">
+                {{ form.a_split.label_tag }}
+                <p id="id_a_split">{{ dataset.a_split | to_split_str }}</p>
+            </div>
+        </div>
+
+        <div>
+            <h2>{% trans 'Dataset Cleansing Settings' %}</h2>
+            <div class="form-row detail">
+                {{ form.removed_incomplete_sylls.label_tag }}
+                <p id="id_removed_incomplete_sylls"><img src="{% if dataset.removed_incomplete_sylls %}{% static 'admin/img/icon-yes.svg' %}{% else %}{% static 'admin/img/icon-no.svg' %}{% endif %}" alt="{{ dataset.removed_incomplete_sylls }}"></p>
+            </div>
+            <div class="form-row detail">
+                {{ form.removed_nicknames.label_tag }}
+                <p id="id_removed_nicknames"><img src="{% if dataset.removed_nicknames %}{% static 'admin/img/icon-yes.svg' %}{% else %}{% static 'admin/img/icon-no.svg' %}{% endif %}" alt="{{ dataset.removed_nicknames }}"></p>
+            </div>
+            <div class="form-row detail">
+                {{ form.removed_nicknames_keywords.label_tag }}
+                <p id="id_removed_nicknames_keywords">{{ dataset.removed_nicknames_keywords }}</p>
+            </div>
+        </div>
+
+        <div>
+            <h2>{% trans 'Selected POS' %}</h2>
+            <div class="form-row detail">
+                {{ form.selected_poses.label_tag }}
+
+                <p id="id_selected_poses">
+                <ul>
+                {% for pos in pos_list %}
+                    <li>{{ pos }}</li>
+                {% endfor %}
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="submit-row">
+        <form method="post" novalidate> {% csrf_token %}
+            {% if dataset.status == 0 or dataset.status == 2 %}
+                <input type="submit" value="{% trans 'Train' %}" class="default" name="_train">
+                <p><a href="{% url 'manage-dataset-edit' dataset.id %}" class="btnlink">{% trans 'Edit' %}</a></p>
+            {% elif dataset.status == 3 %}
+                {% if dataset.status_service %}
+                    <input type="submit" value="{% trans 'Stop Service' %}" class="default" name="_stop">
+                {% else %}
+                    <input type="submit" value="{% trans 'Run Service' %}" class="default" name="_service">
+                {% endif %}
+            {% endif %}
+            <input type="submit" value="{% trans 'Delete' %}" class="deletebtn" name="_delete">
+        </form>
+    </div>
+
+    </div>
+{% endblock %}

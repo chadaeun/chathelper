@@ -1,0 +1,915 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-19 15:04+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: admin.py:21
+msgid "Dashboard"
+msgstr "대시보드"
+
+#: admin.py:22 templates/dataset_create.html:21
+#: templates/dataset_detail.html:16
+msgid "Chatbot Management"
+msgstr "챗봇 관리"
+
+#: admin.py:23 templates/dataset.html:30 templates/dataset.html:100
+msgid "Create Chatbot"
+msgstr "챗봇 생성"
+
+#: admin.py:24
+msgid "Edit Chatbot"
+msgstr "챗봇 편집"
+
+#: admin.py:25
+msgid "Chatbot Detail"
+msgstr "챗봇 상세정보"
+
+#: admin.py:36
+msgid "ChatHelper - ChatBot Management"
+msgstr "ChatHelper - 챗봇 관리"
+
+#: admin.py:37
+msgid "ChatBot Management"
+msgstr "챗봇 관리"
+
+#: constants.py:10
+msgid "left round bracket"
+msgstr ""
+
+#: constants.py:11
+msgid "right round bracket"
+msgstr ""
+
+#: constants.py:12
+msgid "punctuation mark, comma"
+msgstr ""
+
+#: constants.py:13
+msgid "punctuation mark, colon or ellipsis"
+msgstr ""
+
+#: constants.py:14
+msgid "punctuation mark, sentence closer"
+msgstr ""
+
+#: constants.py:15 constants.py:16
+msgid "closing quotation mark"
+msgstr ""
+
+#: constants.py:17
+msgid "symbol, number sign"
+msgstr ""
+
+#: constants.py:18
+msgid "opening quotation mark"
+msgstr ""
+
+#: constants.py:19
+msgid "symbol, currency"
+msgstr ""
+
+#: constants.py:20
+msgid "email"
+msgstr ""
+
+#: constants.py:21
+msgid "affix"
+msgstr ""
+
+#: constants.py:22
+msgid "auxiliary \"be\""
+msgstr ""
+
+#: constants.py:23
+msgid "conjunction, coordinating"
+msgstr ""
+
+#: constants.py:24
+msgid "cardinal number"
+msgstr ""
+
+#: constants.py:25
+msgid "determiner"
+msgstr ""
+
+#: constants.py:26
+msgid "existential there"
+msgstr ""
+
+#: constants.py:27
+msgid "foreign word"
+msgstr ""
+
+#: constants.py:28
+msgid "additional word in multi-word expression"
+msgstr ""
+
+#: constants.py:29
+msgid "forms of \"have\""
+msgstr ""
+
+#: constants.py:30
+msgid "punctuation mark, hyphen"
+msgstr ""
+
+#: constants.py:31
+msgid "conjunction, subordinating or preposition"
+msgstr ""
+
+#: constants.py:32
+msgid "adjective"
+msgstr ""
+
+#: constants.py:33
+msgid "adjective, comparative"
+msgstr ""
+
+#: constants.py:34
+msgid "adjective, superlative"
+msgstr ""
+
+#: constants.py:35
+msgid "list item marker"
+msgstr ""
+
+#: constants.py:36
+msgid "verb, modal auxiliary"
+msgstr ""
+
+#: constants.py:37
+msgid "superfluous punctuation"
+msgstr ""
+
+#: constants.py:38
+msgid "missing tag"
+msgstr ""
+
+#: constants.py:39
+msgid "noun, singular or mass"
+msgstr ""
+
+#: constants.py:40
+msgid "noun, proper singular"
+msgstr ""
+
+#: constants.py:41
+msgid "noun, proper plural"
+msgstr ""
+
+#: constants.py:42
+msgid "noun, plural"
+msgstr ""
+
+#: constants.py:43
+msgid "predeterminer"
+msgstr ""
+
+#: constants.py:44
+msgid "possessive ending"
+msgstr ""
+
+#: constants.py:45
+msgid "pronoun, personal"
+msgstr ""
+
+#: constants.py:46
+msgid "pronoun, possessive"
+msgstr ""
+
+#: constants.py:47
+msgid "adverb"
+msgstr ""
+
+#: constants.py:48
+msgid "adverb, comparative"
+msgstr ""
+
+#: constants.py:49
+msgid "adverb, superlative"
+msgstr ""
+
+#: constants.py:50
+msgid "adverb, particle"
+msgstr ""
+
+#: constants.py:51
+msgid "space"
+msgstr ""
+
+#: constants.py:52
+msgid "symbol"
+msgstr ""
+
+#: constants.py:53
+msgid "infinitival to"
+msgstr ""
+
+#: constants.py:54
+msgid "interjection"
+msgstr ""
+
+#: constants.py:55
+msgid "verb, base form"
+msgstr ""
+
+#: constants.py:56
+msgid "verb, past tense"
+msgstr ""
+
+#: constants.py:57
+msgid "verb, gerund or present participle"
+msgstr ""
+
+#: constants.py:58
+msgid "verb, past participle"
+msgstr ""
+
+#: constants.py:59
+msgid "verb, non-3rd person singular present"
+msgstr ""
+
+#: constants.py:60
+msgid "verb, 3rd person singular present"
+msgstr ""
+
+#: constants.py:61
+msgid "wh-determiner"
+msgstr ""
+
+#: constants.py:62
+msgid "wh-pronoun, personal"
+msgstr ""
+
+#: constants.py:63
+msgid "wh-pronoun, possessive"
+msgstr ""
+
+#: constants.py:64
+msgid "wh-adverb"
+msgstr ""
+
+#: constants.py:65
+msgid "unknown"
+msgstr ""
+
+#: constants.py:69
+msgid "어말 어미"
+msgstr ""
+
+#: constants.py:70
+msgid "선어말 어미"
+msgstr ""
+
+#: constants.py:71
+msgid "관형형 전성 어미"
+msgstr ""
+
+#: constants.py:72
+msgid "감탄사"
+msgstr ""
+
+#: constants.py:73
+msgid "부사격 조사"
+msgstr ""
+
+#: constants.py:74
+msgid "관형격 조사"
+msgstr ""
+
+#: constants.py:75
+msgid "목적격 조사"
+msgstr ""
+
+#: constants.py:76
+msgid "인용격 조사"
+msgstr ""
+
+#: constants.py:77
+msgid "주격 조사"
+msgstr ""
+
+#: constants.py:78
+msgid "보조사"
+msgstr ""
+
+#: constants.py:79
+msgid "일반 부사"
+msgstr ""
+
+#: constants.py:80
+msgid "접속 부사"
+msgstr ""
+
+#: constants.py:81
+msgid "관형사"
+msgstr ""
+
+#: constants.py:82
+msgid "분석불능범주"
+msgstr ""
+
+#: constants.py:83
+msgid "의존 명사"
+msgstr ""
+
+#: constants.py:84
+msgid "일반 명사"
+msgstr ""
+
+#: constants.py:85
+msgid "고유 명사"
+msgstr ""
+
+#: constants.py:86
+msgid "대명사"
+msgstr ""
+
+#: constants.py:87
+msgid "수사"
+msgstr ""
+
+#: constants.py:88
+msgid "줄임표"
+msgstr ""
+
+#: constants.py:89
+msgid "마침표,물음표,느낌표"
+msgstr ""
+
+#: constants.py:90
+msgid "한자"
+msgstr ""
+
+#: constants.py:91
+msgid "외국어"
+msgstr ""
+
+#: constants.py:92
+msgid "숫자"
+msgstr ""
+
+#: constants.py:93
+msgid "붙임표(물결,숨김,빠짐)"
+msgstr ""
+
+#: constants.py:94
+msgid "쉼표,가운뎃점,콜론,빗금"
+msgstr ""
+
+#: constants.py:95
+msgid "따옴표,괄호표,줄표"
+msgstr ""
+
+#: constants.py:96
+msgid "기타기호 (논리수학기호,화폐기호)"
+msgstr ""
+
+#: constants.py:97
+msgid "형용사"
+msgstr ""
+
+#: constants.py:98
+msgid "긍정 지정사 (서술격 조사 '이다')"
+msgstr ""
+
+#: constants.py:99
+msgid "동사"
+msgstr ""
+
+#: constants.py:100
+msgid "보조 용언"
+msgstr ""
+
+#: constants.py:101
+msgid "체언 접두사"
+msgstr ""
+
+#: constants.py:102
+msgid "형용사 파생 접미사"
+msgstr ""
+
+#: constants.py:103
+msgid "명사 파생 접미사"
+msgstr ""
+
+#: constants.py:104
+msgid "동사 파생 접미사"
+msgstr ""
+
+#: constants.py:111
+msgid "Sentence"
+msgstr "문장 단위"
+
+#: constants.py:112
+msgid "Line break"
+msgstr "줄바꿈 단위"
+
+#: constants.py:113
+msgid "Paragraph"
+msgstr "문단 단위"
+
+#: constants.py:117
+msgid "Not trained yet"
+msgstr "구축되지 않음"
+
+#: constants.py:118
+msgid "Training"
+msgstr "구축 중"
+
+#: constants.py:119
+msgid "Training Failed - see log.txt in result directory"
+msgstr "구축 실패 - 챗봇 디렉터리의 'log.txt' 파일을 확인하세요."
+
+#: constants.py:120
+msgid "Trained"
+msgstr "구축 완료"
+
+#: forms/dataset.py:17
+msgid "POS"
+msgstr "품사"
+
+#: forms/dataset.py:34
+msgid "File not found"
+msgstr "파일을 찾을 수 없습니다."
+
+#: forms/dataset.py:36
+msgid "Permission denied"
+msgstr ""
+
+#: forms/dataset.py:38
+msgid "Wrong format - please upload excel file"
+msgstr "잘못된 파일 형식 - 올바른 엑셀 파일을 업로드해주세요."
+
+#: forms/dataset.py:41
+msgid "Wrong format - please check header in your dataset"
+msgstr "잘못된 파일 형식 - 데이터셋 파일의 header(첫 번째 행)을 도움말의 형식에 맞춰주세요."
+
+#: forms/dataset.py:44
+msgid "Your dataset file is empty"
+msgstr "데이터셋 파일이 비어있습니다."
+
+#: forms/dataset.py:54
+#, python-format
+msgid "Wrong value - %(pos)s is not a valid POS"
+msgstr "잘못된 입력 - %(pos)s: 올바른 품사가 아닙니다."
+
+#: models/answer.py:12 models/dataset.py:30 models/qa.py:10
+#: models/question.py:12
+msgid "ID"
+msgstr ""
+
+#: models/answer.py:12
+msgid "ID of answer"
+msgstr "답변 ID"
+
+#: models/answer.py:15 models/qa.py:17
+msgid "answer"
+msgstr "답변"
+
+#: models/answer.py:15
+msgid "Answer sentence"
+msgstr "답변 내용"
+
+#: models/answer.py:19 models/question.py:19
+msgid "question-answer ID"
+msgstr "질의응답 내용"
+
+#: models/answer.py:19 models/question.py:19
+msgid "Original question-answer pair"
+msgstr "질의응답 내용 원본"
+
+#: models/answer.py:22 models/question.py:22
+msgid "index"
+msgstr "인덱스"
+
+#: models/answer.py:22
+msgid "Index of answer in result_dir"
+msgstr "챗봇 디렉터리에서 답변의 인덱스"
+
+#: models/answer.py:25 models/question.py:25
+msgid "tokens"
+msgstr "토큰들"
+
+#: models/answer.py:25 models/question.py:25
+msgid "Tokens"
+msgstr "토큰들 (문장에서 추출한 형태소들 중 품사 조건에 따라 선택된 형태소들)"
+
+#: models/answer.py:28 models/question.py:28
+msgid "all tokens"
+msgstr "전체 토큰들"
+
+#: models/answer.py:28 models/question.py:28
+msgid "All tokens"
+msgstr "전체 토큰들 (문장에서 추출한 형태소들 전체)"
+
+#: models/dataset.py:30
+msgid "ID of dataset"
+msgstr "챗봇 ID"
+
+#: models/dataset.py:33
+msgid "name"
+msgstr "이름"
+
+#: models/dataset.py:33
+msgid "Name of dataset"
+msgstr "챗봇 이름"
+
+#: models/dataset.py:36 models/qa.py:23
+msgid "date"
+msgstr "날짜"
+
+#: models/dataset.py:36 models/qa.py:23
+msgid "Date created"
+msgstr "생성 날짜"
+
+#: models/dataset.py:43
+msgid "original dataset file"
+msgstr "원본 데이터셋 파일"
+
+#: models/dataset.py:43
+msgid "Original dataset file"
+msgstr "원본 데이터셋 파일"
+
+#: models/dataset.py:47
+msgid "question split regular expression pattern"
+msgstr "질문 분할 단위"
+
+#: models/dataset.py:47
+msgid "Regular expression pattern used to splitting question text"
+msgstr "데이터를 처리할 때 질문 데이터를 분할하는 단위"
+
+#: models/dataset.py:51
+msgid "answer split regular expression pattern"
+msgstr "답변 분할 단위"
+
+#: models/dataset.py:52
+msgid "Regular expression pattern used to splitting answer text"
+msgstr "데이터를 처리할 때 답변 데이터를 분할하는 단위"
+
+#: models/dataset.py:56
+msgid "removed incomplete syllables"
+msgstr "불완전한 음절 삭제"
+
+#: models/dataset.py:56
+msgid ""
+"Whether incomplete syllables (eg. ㅠㅠ, ㅋㅋ) have been removed from "
+"dataset\n"
+"(Only available in Korean)"
+msgstr "데이터를 처리할 때 불완전한 음절(예: ㅠㅠ, ㅋㅋ 등)의 삭제 여부"
+
+#: models/dataset.py:60
+msgid "removed nicknames"
+msgstr "닉네임 및 이름 삭제"
+
+#: models/dataset.py:60
+msgid ""
+"Whether nicknames have been removed from dataset\n"
+"(Only available in Korean)"
+msgstr "닉네임 및 이름 삭제 여부"
+
+#: models/dataset.py:64
+msgid "keywords for removing nicknames"
+msgstr "닉네임 및 이름 삭제 키워드"
+
+#: models/dataset.py:64
+#, python-format
+msgid "Comma seperated keywords for detecting and removing nicknames"
+msgstr "닉네임이나 이름을 찾아 삭제하는 데에 사용되는 키워드 (예: 님, 고객님 등)\n"
+"쉼표로 구분하여 입력해주세요."
+
+#: models/dataset.py:64
+msgid "removed_nicknames"
+msgstr "닉네임 및 이름 삭제"
+
+#: models/dataset.py:68
+msgid "selected part of speeches"
+msgstr "선택한 품사들"
+
+#: models/dataset.py:68
+msgid "Selected part of speeches"
+msgstr "선택한 품사들"
+
+#: models/dataset.py:71
+msgid "prepared dataset directory path"
+msgstr "챗봇 디렉터리"
+
+#: models/dataset.py:71
+msgid "Path of prepared dataset directory"
+msgstr "챗봇 구축 및 서비스에 요구되는 파일들을 저장한 디렉터리"
+
+#: models/dataset.py:75
+msgid "status"
+msgstr "현황"
+
+#: models/dataset.py:75
+msgid "Training status"
+msgstr "구축 현황"
+
+#: models/dataset.py:78
+msgid "training status"
+msgstr "구축 현황"
+
+#: models/dataset.py:78
+msgid "Detailed training status"
+msgstr "구축 현황 상세"
+
+#: models/dataset.py:82
+msgid "service status"
+msgstr "서비스 현황"
+
+#: models/qa.py:14
+msgid "dataset"
+msgstr "챗봇"
+
+#: models/qa.py:14
+msgid "Connected dataset"
+msgstr "연결된 챗봇"
+
+#: models/qa.py:17
+msgid "Original answer text"
+msgstr "원본 답변 텍스트"
+
+#: models/qa.py:20 models/question.py:15
+msgid "question"
+msgstr "질문"
+
+#: models/qa.py:20
+msgid "Original question text"
+msgstr "원본 질문 텍스트"
+
+#: models/qa.py:26
+msgid "index in dataset"
+msgstr "챗봇에서 질의응답 데이터의 인덱스"
+
+#: models/qa.py:26
+msgid "Index in dataset"
+msgstr "챗봇에서 질의응답 데이터의 인덱스"
+
+#: models/question.py:12
+msgid "ID of question"
+msgstr "질문 ID"
+
+#: models/question.py:15
+msgid "Question sentence"
+msgstr "질문 내용"
+
+#: models/question.py:22
+msgid "Index of question in result_dir"
+msgstr "챗봇 디렉터리에서 질문의 인덱스"
+
+#: templates/dataset.html:41
+msgid "Search"
+msgstr ""
+
+#: templates/dataset.html:43
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/dataset.html:43
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: templates/dataset.html:56
+msgid "Action to selected chatbots:"
+msgstr "선택한 챗봇(들)에 다음을 수행:"
+
+#: templates/dataset.html:57
+msgid "Delete selected chatbots"
+msgstr "선택한 챗봇(들) 삭제"
+
+#: templates/dataset.html:57 templates/dataset_detail.html:103
+msgid "Delete"
+msgstr ""
+
+#: templates/dataset.html:98
+msgid "There is no chatbot searched."
+msgstr "검색된 챗봇이 없습니다."
+
+#: templates/dataset.html:99
+msgid "You can make one at \"Create Chatbot\"."
+msgstr "\"Create Chatbot\"에서 챗봇을 만드세요."
+
+#: templates/dataset_create.html:30
+msgid "Edit prohibitted"
+msgstr "편집이 금지되었습니다."
+
+#: templates/dataset_create.html:31
+msgid "You can't edit your dataset while/after training."
+msgstr "챗봇이 구축 중이거나 구축 완료되었을 때는 편집할 수 없습니다."
+
+#: templates/dataset_create.html:32
+msgid "Please create new dataset and train it."
+msgstr "새로운 데이터셋을 생성한 뒤 구축해주세요."
+
+#: templates/dataset_create.html:44 templates/dataset_detail.html:25
+msgid "Basic Settings"
+msgstr "기본 설정"
+
+#: templates/dataset_create.html:63 templates/dataset_create.html:76
+msgid "Upload File"
+msgstr "데이터셋 파일 업로드"
+
+#: templates/dataset_create.html:76 templates/dataset_create.html:142
+#: templates/dataset_create.html:217 templates/dataset_create.html:249
+msgid "Help"
+msgstr "도움말"
+
+#: templates/dataset_create.html:78
+msgid ""
+"You should select correctly formatted .xlsx file which contains your "
+"question - answer data(eg. QA board data)."
+msgstr "질의응답 데이터(예: Q&A 게시판 데이터)를 저장한 올바른 형식의 .xlsx 파일을 선택해주세요."
+
+#: templates/dataset_create.html:79
+msgid "Your file should match the format specified bellow."
+msgstr "선택한 파일은 아래의 형식을 따라야 합니다."
+
+#: templates/dataset_create.html:119 templates/dataset_create.html:142
+#: templates/dataset_detail.html:55
+msgid "Dataset Split Settings"
+msgstr "데이터 분할 설정"
+
+#: templates/dataset_create.html:144
+msgid ""
+"Your data might be messive, but don't worry. We will automatically split "
+"texts in your data to fit to chatbot system."
+msgstr "ChatHelper는 챗봇 시스템에 적합하도록 데이터정셋의 텍스트를 자동으로 분할합니다. "
+"이에 따라 짧은 질문과 긴 답변으로 구성된 데이터, 한 질의응답 게시물에 여러 개의 질문과 답변이 "
+"포함된 데이터도 자동으로 분할하여 처리할 수 있습니다."
+
+#: templates/dataset_create.html:145
+msgid ""
+"All you need to do is just selecting how to split text. Here's some examples."
+msgstr "텍스트의 분할 단위를 선택하기만 하면 됩니다. 아래는 텍스트 분할 단위의 예시들입니다."
+
+#: templates/dataset_create.html:147 templates/dataset_create.html:224
+msgid "Original Text"
+msgstr "원본 텍스트"
+
+#: templates/dataset_create.html:152
+msgid "Split by Sentence"
+msgstr "문장 단위 분할"
+
+#: templates/dataset_create.html:161
+msgid "Split by Line Break"
+msgstr "줄바꿈 단위 분할"
+
+#: templates/dataset_create.html:169
+msgid "Split by Paragraph"
+msgstr "문단 단위 분할"
+
+#: templates/dataset_create.html:184 templates/dataset_create.html:217
+#: templates/dataset_detail.html:67
+msgid "Dataset Cleansing Settings"
+msgstr "데이터 정제 설정"
+
+#: templates/dataset_create.html:219
+msgid "Data cleansing functions are only available with Korean data."
+msgstr "데이터 정제 설정은 한국어 데이터에만 사용 가능합니다."
+
+#: templates/dataset_create.html:220
+msgid ""
+"If you turn \"Removed nicknames\" option one, we will automatically cleanse "
+"nicknames from your data for preventing them exposed in chatbot service."
+msgstr "\"닉네임 및 이름 삭제\" 옵션을 선택할 경우, 챗봇 서비스에서 기존 질문자의 "
+"이름을 포함한 답변을 제시하지 않도록 자동으로 데이터에서 이름을 제거합니다."
+
+#: templates/dataset_create.html:221
+msgid ""
+"\"Keywords for removing nicknames\" means suffixes cooccurs with nickname. "
+"You should fill this field to remove nicknames automaticallly."
+msgstr "\"닉네임 및 이름 삭제 키워드\"는 이름에 붙는 접미사를 의미합니다."
+"닉네임 및 이름 자동 삭제를 원할 경우 이 입력 필드를 꼭 채워주세요."
+
+#: templates/dataset_create.html:222
+msgid "Below is an example!"
+msgstr "아래는 예시입니다."
+
+#: templates/dataset_create.html:226
+msgid "After removing nicknames with keywords ['님']"
+msgstr "['님'] 키워드로 닉네임 및 이름을 자동으로 삭제한 결과"
+
+#: templates/dataset_create.html:236
+msgid "Select POS"
+msgstr "품사 선택"
+
+#: templates/dataset_create.html:249
+msgid "Select POS (Part of Speech)"
+msgstr "품사 선택"
+
+#: templates/dataset_create.html:251
+msgid ""
+"Part of speech (POS) is a category of words which have similar grammatical "
+"properties."
+msgstr "품사는 비슷한 문법적 특징을 가진 단어들의 카테고리입니다."
+
+#: templates/dataset_create.html:252
+msgid ""
+"We extract tokens and their POS from sentence in order to calculate "
+"similarity between sentences."
+msgstr "ChatHelper에서는 문장들 간의 유사도를 계산하기 위하여 문장에서 토큰들과 "
+"각 토큰들의 품사를 추출합니다."
+
+#: templates/dataset_create.html:253
+msgid ""
+"You can select POS; recommended setting is selecting only nouns, as they "
+"represent keywords in sentences."
+msgstr "데이터의 특징에 적합하게 직접 품사를 선택할 수 있습니다. 권장 설정은 "
+"문장의 키워드를 나타내는 명사들만을 선택하는 것입니다."
+
+#: templates/dataset_create.html:260
+msgid "Save"
+msgstr "저장"
+
+#: templates/dataset_detail.html:83
+msgid "Selected POS"
+msgstr "선택한 품사"
+
+#: templates/dataset_detail.html:94
+msgid "Train"
+msgstr "구축"
+
+#: templates/dataset_detail.html:95
+msgid "Edit"
+msgstr "편집"
+
+#: templates/dataset_detail.html:98
+msgid "Stop Service"
+msgstr "서비스 중단"
+
+#: templates/dataset_detail.html:100
+msgid "Run Service"
+msgstr "서비스 시작"
+
+#: views/dataset.py:32
+msgid "Delete action failed."
+msgstr "삭제에 실패하였습니다."
+
+#: views/dataset.py:34
+msgid "Successfully deleted selected datasets."
+msgstr "선택한 챗봇을 성공적으로 삭제하였습니다."
+
+#: views/dataset.py:37
+msgid "No dataset selected. Nothing changed."
+msgstr "선택된 챗봇이 없어 아무 챗봇도 변경되지 않았습니다."
+
+#: views/dataset.py:83 views/dataset.py:179
+msgid "Please select your original dataset file again"
+msgstr "원본 데이터셋 파일을 다시 선택해주세요. "
+"(별도의 경고 메시지가 없을 경우, 선택한 데이터셋 파일에는 문제가 없으니 "
+"해당 파일을 다시 선택해주시면 됩니다.)"
+
+#: views/dataset.py:109
+msgid "Your chatbot is already traning now."
+msgstr "챗봇이 이미 구축 중입니다."
+
+#: views/dataset.py:113
+msgid "Your chatbot has already traned now."
+msgstr "챗봇이 이미 구축되었습니다."
+
+#: views/dataset.py:120
+msgid "Your chatbot started to train successfully."
+msgstr "챗봇이 성공적으로 구축 시작되었습니다."
+
+#: views/dataset.py:125
+msgid "You cannot run chatbot service with not trained chatbot."
+msgstr "구축되지 않은 챗봇으로는 챗봇 서비스를 시작할 수 없습니다."
+
+#: views/dataset.py:129
+msgid "There is running chatbot now. Please retry after stop it."
+msgstr "이미 서비스 중인 챗봇이 있습니다. 해당 챗봇을 서비스 중지한 뒤 다시 시도해주세요."
+
+#: views/dataset.py:133
+msgid "Your chatbot started to service successfully."
+msgstr "챗봇이 성공적으로 서비스를 시작하였습니다."
+
+#: views/dataset.py:140
+msgid "Failed to send stop signal"
+msgstr "챗봇 중지에 실패하였습니다."
+
+#: views/dataset.py:142
+msgid "Successfully sended stop signal"
+msgstr "챗봇 중지 요청을 성공적으로 전송하였습니다."
+
+#: views/dataset.py:168
+msgid "Changes are saved successfully."
+msgstr "변경 사항이 성공적으로 저장되었습니다."
