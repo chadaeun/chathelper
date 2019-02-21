@@ -36,7 +36,7 @@ def chatbot_manage_context_processor(request):
         'site_header': _('ChatHelper - ChatBot Management'),
         'site_title': _('ChatBot Management'),
         # footer
-        'github_url': 'https://github.com/',  # TODO add github public repo
+        'github_url': 'https://github.com/chadaeun/chathelper',
         'email': 'chadaeun57@gmail.com',
         # authentication
         'has_permission': get_has_permission(request.user),
