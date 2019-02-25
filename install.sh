@@ -25,5 +25,5 @@ python3.6 get-pip.py
 # create venv
 pip install virtualenv
 python3.6 -m virtualenv venv
-easy_install Pillow
+venv/bin/easy_install Pillow
 venv/bin/pip install -r pipfreeze.txt
