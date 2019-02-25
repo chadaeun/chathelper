@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 apt-get -y update
+apt install build-essential
 
 # install docker
 apt-get -y install docker
