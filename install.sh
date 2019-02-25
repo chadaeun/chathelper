@@ -11,12 +11,16 @@ docker build chatbot_manage/coala --tag coala:latest
 apt-get -y install gettext
 
 # install python
-apt-get install software-properties-common
-add-apt-repository ppa:deadsnakes/ppa
-apt-get update
+apt-get -y install software-properties-common
+add-apt-repository ppa:deadsnakes/ppa -y
+apt-get -y update
 apt-get -y install python3.6
+
+# install pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3.6 get-pip.py
 
 # create venv
 pip install virtualenv
-python3 -m virtualenv venv
-venv/bin/pip3 install -r pipfreeze.txt
+python3.6 -m virtualenv venv
+venv/bin/pip install -r pipfreeze.txt
