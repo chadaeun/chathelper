@@ -64,3 +64,30 @@ form .form-step-help th, form .form-step-help td {
 .replies p {
     overflow: hidden;
 }
+
+#frame .content .message-input {
+    bottom: 30px;
+}
+
+#frame .content .message-input .wrap input {
+    width: calc(100% - 50px);
+}
+
+.answer-setting {
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #8fa1b3;
+    color: white;
+}
+
+.answer-setting p {
+    float: left;
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.answer-setting input[type="radio"] {
+    margin-left: 10px;
+}

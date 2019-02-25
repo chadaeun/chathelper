@@ -15,9 +15,8 @@
     <link rel="stylesheet" type="text/css" href="{% static "bootstrap-grid.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "bootstrap-reboot.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "admin/css/base.css" %}">
-    <link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
-    <!-- added because bootstrap overwrites base.css -->
     <link rel="stylesheet" type="text/css" href="{% static "chat.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "base.css" %}">
 {% endblock %}
 
 {% block branding %}
@@ -75,6 +74,14 @@ Website: http://emilcarlsson.se/
 			<button class="submit">{% trans 'Send' %}</button>
 			</div>
 		</div>
+        <div class="answer-setting">
+            <p>답변 개수 설정:</p>
+            <input type="radio" name="nanswer" value="1"> 1
+            <input type="radio" name="nanswer" value="2"> 2
+            <input type="radio" name="nanswer" value="3"> 3
+            <input type="radio" name="nanswer" value="4"> 4
+            <input type="radio" name="nanswer" value="5" checked="checked"> 5
+        </div>
 	</div>
 </div>
     </div>
@@ -134,8 +141,10 @@ function newMessage() {
 	  data: JSON.stringify(message),
 
 	  success: function(data){
+	      var max = $('input[name=nanswer]:checked').val();
+
 	      // qa_id, answer, date
-          for (var i = 0; i < data.length; i++) {
+          for (var i = 0; i < data.length && i < max; i++) {
               var answer = data[i];
               var answer_text = answer.answer.replace('\n', '<br>');
               $('<li class="replies"><p>' + answer_text + '(' + answer.date + ') ' + '<a href="' + answer.qa_id + '" target="_blank">{% trans "view more" %}&rsaquo;&rsaquo;</a>' + '</p></li>').appendTo($('.messages ul'));
