@@ -16,7 +16,7 @@ apt-get -y install software-properties-common
 add-apt-repository ppa:deadsnakes/ppa -y
 apt-get -y update
 apt-get -y install python3.6
-apt-get -y install libxml2-dev libxslt-dev python-dev
+apt-get -y install libxml2-dev libxslt-dev python3.6-dev
 
 # install pip
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
