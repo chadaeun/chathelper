@@ -23,6 +23,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python3.6 get-pip.py
 
 # create venv
+apt-get -y install libjpeg-dev
 pip install virtualenv
 python3.6 -m virtualenv venv
 venv/bin/easy_install Pillow
