@@ -26,3 +26,9 @@ python3.6 get-pip.py
 pip install virtualenv
 python3.6 -m virtualenv venv
 venv/bin/pip install -r pipfreeze.txt
+
+# migrate
+venv/bin/python manage.py migrate
+
+# install rabbitmq
+apt-get -y install rabbitmq-server
