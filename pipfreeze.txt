@@ -139,7 +139,6 @@ sklearn==0.0
 smart-open==1.8.0
 snowballstemmer==1.2.1
 sorl-thumbnail==12.4a1
-spacy==2.0.5
 Sphinx==1.8.3
 sphinxcontrib-websupport==1.1.0
 stemming==1.0.1
